@@ -1,0 +1,123 @@
+/* style.css */
+
+/* 전체 스타일 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #4a90e2;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2.5em;
+}
+
+a {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #4a90e2;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #357ABD;
+}
+
+/* 내비게이션 바 스타일 */
+#navbar {
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#navbar span {
+    font-size: 1.5em;
+}
+
+/* 게시물 리스트 스타일 */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 60px auto 0; /* 내비게이션 바 높이 고려 */
+    max-width: 800px;
+}
+
+li {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+h2 {
+    margin: 0;
+    color: #333;
+    font-size: 1.8em;
+}
+
+p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+ul ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+ul ul li {
+    border: none;
+    font-size: 1em;
+    color: #888;
+}
+
+ul ul li:before {
+    content: "• ";
+    color: #4a90e2;
+}
+
+ul ul li:first-child {
+    color: #333;
+    font-style: italic;
+}
+
+/* 미디어 쿼리: 모바일 대응 */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    a {
+        width: 90%;
+        font-size: 1em;
+    }
+
+    #navbar span {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+}
