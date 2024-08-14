@@ -121,3 +121,15 @@ ul ul li:first-child {
         font-size: 1em;
     }
 }
+
+/* 썸네일 이미지 스타일 */
+img.thumbnail {
+    width: 50px; /* 원하는 너비로 설정 */
+    height: 50px; /* 원하는 높이로 설정 */
+    object-fit: cover; /* 이미지를 비율에 맞게 잘라서 채우기 */
+    border-radius: 8px; /* 모서리 둥글게 하기 */
+    display: block;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+
