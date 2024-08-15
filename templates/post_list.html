@@ -16,8 +16,11 @@
     <h1>Post-List</h1>
     <ul>
         {% for post in posts %}
-            <li>
+            <li class="post">
                 <h2>{{ post.title }}</h2>
+                <div>
+                    <a href="/posts/{{ post.id }}/">{{ post.title }}</a>
+                </div>
                 <p>{{ post.content }}</p>
                 <ul>
                     {% for comment in post.comment_set.all %}
@@ -29,15 +32,7 @@
                 {% if post.thumbnail %}
                     <img
                         src="{{ post.thumbnail.url }}"
-                        alt="None"
-                        style="
-                            width: 300px; /* 원하는 너비로 설정 */
-                            height: 300px; /* 원하는 높이로 설정 */
-                            object-fit: cover; /* 이미지를 비율에 맞게 잘라서 채우기 */
-                            border-radius: 8px; /* 모서리 둥글게 하기 */
-                            display: block;
-                            margin: 0 auto; /* 가운데 정렬 */
-                        ">
+                        alt="None">
                 {% else %}
                     <img src="" alt="">
                 {% endif %}

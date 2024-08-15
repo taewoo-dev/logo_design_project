@@ -1,0 +1,68 @@
+/* 전체 스타일 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* 내비게이션 바 스타일 */
+#navbar {
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* 이미지와 제목 간의 간격 */
+}
+
+/* 썸네일 이미지 스타일 */
+#navbar img {
+    width: 200px; /* 이미지 너비 */
+    height: 200px; /* 이미지 높이 */
+    object-fit: cover; /* 비율에 맞게 잘라서 채우기 */
+    border-radius: 8px; /* 모서리 둥글게 하기 */
+    display: block;
+    margin: 10px; /* 가운데 정렬은 flexbox로 처리 */
+}
+
+/* 내비게이션 바의 제목 스타일 */
+#navbar span {
+    font-size: 1.5em; /* 제목 폰트 크기 */
+}
+
+/* 포스트 내용 스타일 */
+#post-detail {
+    margin: 80px auto 20px; /* 내비게이션 바 높이를 고려한 마진 */
+    padding: 20px;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#post-detail p {
+    font-size: 1.2em; /* 본문 폰트 크기 */
+    color: #666; /* 본문 텍스트 색상 */
+}
+
+/* 미디어 쿼리: 모바일 대응 */
+@media (max-width: 600px) {
+    #navbar span {
+        font-size: 1.2em; /* 제목 폰트 크기 조정 */
+    }
+
+    #post-detail p {
+        font-size: 1em; /* 본문 폰트 크기 조정 */
+    }
+}

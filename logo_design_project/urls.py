@@ -19,13 +19,15 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
-from logo_design_app.views import post_list
+from logo_design_app.views import post_list, post_detail, post_add
 from logo_design_project.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
-    path('posts/', post_list)
+    path('posts/', post_list),
+    path('posts/<int:post_id>/', post_detail),
+    path('posts/add/', post_add),
 ]
 
 urlpatterns += static(
