@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from logo_design_app.models import Post
+from logo_design_app.models import Post, Comment
 
 
 # Create your views here.
@@ -15,6 +15,12 @@ def post_list(request):
 
 def post_detail(request, post_id):
     post = Post.objects.get(id=post_id)
+    if request.method == "POST":
+        comment_content = request.POST["comment"]
+        Comment.objects.create(
+            post=post,
+            content=comment_content,
+        )
     context = {
         "post": post
     }
