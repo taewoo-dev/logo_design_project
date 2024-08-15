@@ -19,7 +19,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
-from logo_design_app.views import post_list, post_detail, post_add
+from logo_design_app.views import post_list, post_detail, post_add, main, submit_form, survey
 from logo_design_project.views import index
 
 urlpatterns = [
@@ -28,6 +28,9 @@ urlpatterns = [
     path('posts/', post_list),
     path('posts/<int:post_id>/', post_detail),
     path('posts/add/', post_add),
+    path("main", main),
+    path('survey', survey),
+    path('submit-form/', submit_form, name='submit_form'),
 ]
 
 urlpatterns += static(

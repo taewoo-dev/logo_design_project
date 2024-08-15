@@ -32,9 +32,28 @@ def post_add(request):
         print("method POST")
         title = request.POST["title"]
         content = request.POST["content"]
-        post = Post.objects.create(title=title, content=content,)
+        thumbnail = request.FILES["thumbnail"]
+        post = Post.objects.create(title=title, content=content, thumbnail=thumbnail)
         return redirect(f"/posts/{post.id}")
     else:
         print("method GET")
 
     return render(request, "post_add.html")
+
+
+def main(requset):
+    return render(requset, "index2.html")
+
+
+def survey(request):
+    return render(request, "survey_form.html")
+
+
+def submit_form(request):
+    # if request.method == "POST":
+    #     req = request.POST
+    #     name = req["Name"]
+    #     email = req["Email"]
+    #     message = req["Message"]
+    print(request.POST)
+    return redirect("/main")
