@@ -1,15 +1,20 @@
 from django.contrib import admin
-from logo_design_app.models import Post, Comment
+from logo_design_app.models import Post, Comment, Survey
 
 
 # Register your models here.
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ["title","thumbnail"]
+    list_display = ["title", "thumbnail"]
     pass
 
 
 @admin.register(Comment)
 class Admin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Survey)
+class SurveyAdmin(admin.ModelAdmin):
     pass

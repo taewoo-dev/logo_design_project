@@ -2844,14 +2844,19 @@
     form2Data.forEach((value, key) => formData.append(key, value));
     fetch('submit-form/', {  // 서버 엔드포인트 URL로 교체
       method: 'POST',
-      body: formData
+      body: formData,
+      redirect: 'follow'
     })
-    .then(response => response.text())
-    .then(data => {
-      alert('제출 완료!');
+    .then(response => {
+      if (response.redirected) {
+        // 서버가 리다이렉트 요청을 보낸 경우, 해당 URL로 리다이렉트
+        window.location.href = response.url;
+      } else {
+        return response.text();  // 리디렉션이 없으면 응답 처리
+      }
     })
     .catch(error => {
-      alert('제출 실패!');
+      console.error('Error:', error);
     });
   });
 

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from logo_design_app.models import Post, Comment
+from logo_design_app.models import Post, Comment, Survey
 
 
 # Create your views here.
@@ -55,5 +55,19 @@ def submit_form(request):
     #     name = req["Name"]
     #     email = req["Email"]
     #     message = req["Message"]
-    print(request.POST)
+    # print(request.POST)
+    username = request.POST["UserName"]
+    phone_number = request.POST["Phone"]
+    email = request.POST["Email"]
+    brand_name = request.POST["BrandName"]
+    brand_mean = request.POST["BrandMean"]
+    brand_desc = request.POST["BrandDesc"]
+    brand_target = request.POST["BrandTarget"]
+    logo_type = request.POST["radio"]
+    brand_image = request.POST["BrandPlusImage"]
+    brand_color = request.POST["BrandColor"]
+    Survey.objects.create(username=username, phone=phone_number, email=email, brand_name=brand_name,
+                          brand_mean=brand_mean, brand_desc=brand_desc, brand_target=brand_target, logo_type=logo_type,
+                          brand_image=brand_image, brand_color=brand_color)
+    print("새로운 고객 추가")
     return redirect("/main")
