@@ -1,9 +1,15 @@
 {% extends 'main/base.html' %}
-
+{% load static %}
 {% block content %}
 	<div class="section-add-portfoilo">
     <div class="portfolioformdiv w-form">
-      <form id="wf-form-Column-form" name="wf-form-Column-form" data-name="Column form" method="get" class="portfoiloform" data-wf-page-id="66c1f36002f84885c8d2f084" data-wf-element-id="a1e1ffd5-77d7-caf4-787e-e08ec1384cea"><input class="portfoliotitle w-node-a1e1ffd5-77d7-caf4-787e-e08ec1384ced-c8d2f084 w-input" autofocus="true" maxlength="256" name="PortfolioTitle" data-name="PortfolioTitle" placeholder="Create title section" type="text" id="PortfolioTitle" required=""><input class="portfoliotype w-node-_1b6556d8-5404-1c5b-bdeb-e070676c79f7-c8d2f084 w-input" maxlength="256" name="logoType" data-name="logoType" placeholder="로고의 종류를 입력하세요." type="text" id="logoType" required=""><input class="portfoliothumbnail w-node-a1e1ffd5-77d7-caf4-787e-e08ec1384cf0-c8d2f084 w-input" maxlength="256" name="ColumnThumbnail" data-name="ColumnThumbnail" placeholder="Drag the thumbnail image you want to add" type="text" id="ColumnThumbnail" required=""><input type="submit" data-wait="Please wait..." id="w-node-_154c6075-f703-67f7-687d-d39cc3d72d08-c8d2f084" class="submit-button w-button" value="발행"></form>
+      <form id="wf-form-Column-form" name="PortfolioForm" action="/portfolio-form/" enctype="multipart/form-data" data-name="Column form" method="post" class="portfoiloform" data-wf-page-id="66c1f36002f84885c8d2f084" data-wf-element-id="a1e1ffd5-77d7-caf4-787e-e08ec1384cea">
+          {% csrf_token %}
+          <input class="portfoliotitle w-node-a1e1ffd5-77d7-caf4-787e-e08ec1384ced-c8d2f084 w-input" autofocus="true" maxlength="256" name="PortfolioTitle" data-name="PortfolioTitle" placeholder="Create title section" type="text" id="PortfolioTitle" required="">
+          <input class="portfoliotype w-node-_1b6556d8-5404-1c5b-bdeb-e070676c79f7-c8d2f084 w-input" maxlength="256" name="PortfolioLogoType" data-name="logoType" placeholder="로고의 종류를 입력하세요." type="text" id="logoType" required="">
+          <input class="portfoliothumbnail w-node-a1e1ffd5-77d7-caf4-787e-e08ec1384cf0-c8d2f084 w-input" maxlength="256" name="PortfolioThumbnail" data-name="ColumnThumbnail" placeholder="Drag the thumbnail image you want to add" type="file" id="ColumnThumbnail" required="">
+          <input type="submit" data-wait="Please wait..." id="w-node-_154c6075-f703-67f7-687d-d39cc3d72d08-c8d2f084" class="submit-button w-button" value="발행">
+      </form>
       <div class="w-form-done">
         <div>Thank you! Your submission has been received!</div>
       </div>

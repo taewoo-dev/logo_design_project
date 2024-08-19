@@ -30,6 +30,7 @@ class Survey(models.Model):
     logo_type = models.CharField("로고 종류", max_length=100)
     brand_image = models.TextField("넣고 싶은 이미지", max_length=300)
     brand_color = models.CharField("원하는 싶은 색상", max_length=300)
+    created_at = models.DateTimeField("작성 날짜", auto_now_add=True)
 
     def __str__(self):
         return f"{self.username}의 설문지"
@@ -41,3 +42,10 @@ class Review(models.Model):
     thumbnail = models.ImageField("리뷰 썸네일 이미지", upload_to="review")
     created_at = models.DateTimeField("작성 날짜", auto_now_add=True)
     updated_at = models.DateTimeField("수정 날짜", auto_now=True)
+
+
+class Portfolio(models.Model):
+    title = models.CharField("포트폴리오 제목", max_length=100)
+    logotype = models.CharField("포트폴리오 로고 종류", max_length=100)
+    thumbnail = models.ImageField("포트폴리오 썸네일 이미지", upload_to="portfolio")
+    created_at = models.DateTimeField("작성 날짜", auto_now_add=True)

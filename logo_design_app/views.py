@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from logo_design_app.models import Post, Comment, Survey, Review
+from logo_design_app.models import Post, Comment, Survey, Review, Portfolio
 
 
 # Create your views here.
@@ -77,8 +77,19 @@ def add_portfolio(request):
     return render(request, "main/add-portfolio.html")
 
 
+def portfolio_form(request):
+    if request.method == "POST":
+        print(request.POST)
+        title = request.POST['PortfolioTitle']
+        logotype = request.POST['PortfolioLogoType']
+        thumbnail = request.FILES['PortfolioThumbnail']
+        Portfolio.objects.create(title=title, logotype=logotype, thumbnail=thumbnail)
+        print("새로운 포트폴리오 추가!")
+    return redirect("portfolio")
+
+
 def survey_form(request):
-    if request.method == "Post":
+    if request.method == "POST":
         print(request.POST)
         username = request.POST["UserName"]
         phone_number = request.POST["Phone"]
@@ -96,7 +107,7 @@ def survey_form(request):
                               brand_image=brand_image, brand_color=brand_color)
         print("새로운 고객 추가")
     # 견적서를 파일로 변환하는 로직 이후에 추가
-    return redirect("/main")
+    return redirect("main")
 
 
 def review_form(request):
@@ -108,4 +119,4 @@ def review_form(request):
         image = request.FILES['ReviewThumbnail']
         Review.objects.create(content=content, rating=rating, thumbnail=image)
         print("새로운 리뷰 추가")
-    return redirect("/review")
+    return redirect("review")
