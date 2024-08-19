@@ -20,7 +20,7 @@ from django.contrib import admin
 from django.urls import path
 
 from logo_design_app.views import post_list, post_detail, post_add, main, survey, portfolio, column, \
-    review, notice, survey_form, review_form
+    review, notice, survey_form, review_form, add_portfolio
 from logo_design_project.views import index
 
 urlpatterns = [
@@ -37,6 +37,7 @@ urlpatterns = [
     path("column", column),
     path("review", review),
     path("notice", notice),
+    path("add-portfolio/", add_portfolio),
     path('survey-form/', survey_form, name='survey_form'),
     path('review-form/', review_form, name="review_form")
 ]

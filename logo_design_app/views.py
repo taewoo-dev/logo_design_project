@@ -73,6 +73,10 @@ def notice(request):
     return render(request, "main/notice.html")
 
 
+def add_portfolio(request):
+    return render(request, "main/add-portfolio.html")
+
+
 def survey_form(request):
     if request.method == "Post":
         print(request.POST)
@@ -87,7 +91,8 @@ def survey_form(request):
         brand_image = request.POST["BrandPlusImage"]
         brand_color = request.POST["BrandColor"]
         Survey.objects.create(username=username, phone=phone_number, email=email, brand_name=brand_name,
-                              brand_mean=brand_mean, brand_desc=brand_desc, brand_target=brand_target, logo_type=logo_type,
+                              brand_mean=brand_mean, brand_desc=brand_desc, brand_target=brand_target,
+                              logo_type=logo_type,
                               brand_image=brand_image, brand_color=brand_color)
         print("새로운 고객 추가")
     # 견적서를 파일로 변환하는 로직 이후에 추가
@@ -104,4 +109,3 @@ def review_form(request):
         Review.objects.create(content=content, rating=rating, thumbnail=image)
         print("새로운 리뷰 추가")
     return redirect("/review")
-

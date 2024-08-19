@@ -1,5 +1,5 @@
 from django.contrib import admin
-from logo_design_app.models import Post, Comment, Survey
+from logo_design_app.models import Post, Comment, Survey, Review
 
 
 # Register your models here.
@@ -17,4 +17,9 @@ class Admin(admin.ModelAdmin):
 
 @admin.register(Survey)
 class SurveyAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Review)
+class ReviewAdmin(admin.ModelAdmin):
     pass
