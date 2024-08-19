@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+    <section class="portfolio-section">
+    <div class="div-block-13">
+      <h1>PORTFOLIO</h1>
+    </div>
+    <div class="w-layout-grid grid-2">
+      {% for portfolio in portfolios %}
+          <div id="w-node-_56897de8-3731-b5b4-d640-9755c99907c4-993134a9" class="div-block-4">
+{#            <a href="" class="link-block-1 w-inline-block" style="background-image: url('{{ portfolio.thumbnail.url }}')"></a>#}
+            <div class="link-block-1 w-inline-block" style="background-image: url('{{ portfolio.thumbnail.url }}')"></div>
+            <div class="work-description">
+                <a href="" class="project-name-link">{{ portfolio.title }}</a>
+                <div class="paragraph-light">{{ portfolio.logotype }}</div>
+            </div>
+          </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

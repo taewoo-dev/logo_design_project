@@ -1,0 +1,121 @@
+{% extends 'main/base.html'%}
+{% load static %}
+{% block content %}
+    <section class="reviewsection">
+    <div class="w-layout-blockcontainer reviewcontainer w-container">
+      <div class="reviewtitle">
+        <h1 class="heading-4"><strong>고객 후기</strong></h1>
+        <div class="text-block-12">실제 의뢰한 고객분들만 작성 가능합니다.<br>조작없이 100% 클린한 후기를 확인해보세요.</div>
+        <div class="review-wrap">
+          <div class="w-layout-grid grid-4">
+            <div>
+              <div id="w-node-e2a2cc81-2913-05b3-e0fe-dac2470088b7-a46ec010"><strong>고객후기 작성수</strong></div>
+              <div><strong>1004개</strong></div>
+            </div>
+            <div id="w-node-a0e07be4-b882-1b7e-988e-8e2c1234c4ae-a46ec010">
+              <div><strong>고객후기 평점</strong></div>
+              <div><strong>4.8 / 5.0<br></strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <figure class="reviewaddprev">
+        <div class="reviewformprev">
+          <div class="text-block-13">REVIEW<br>‍</div>
+          <div class="div-block-20">
+            <p class="paragraph">구매 후 작성이 가능합니다.</p>
+          </div>
+          <div class="div-block-21">등록<br></div>
+        </div>
+      </figure>
+      <div class="reviewadd">
+        <div class="reviewformdiv w-form">
+          <form id="review-form" name="review-form" action="/review-form/" enctype="multipart/form-data" data-name="review Form" method="post" class="reviewform" data-wf-page-id="66c0cb8c9351f5fea46ec010" data-wf-element-id="754d1117-ffe7-7687-46bb-3c13c8380bec"><label for="ReviewContent" class="field-label-9">Review</label>
+            {% csrf_token %}
+              <div class="reviewthumbnail"><input class="text-field-2 w-input" name="ReviewThumbnail" data-name="ReviewThumbnail" type="file" id="ReviewThumbnail" required=""></div>
+            <div class="div-block-15"><textarea required="" autofocus="autofocus" placeholder="리뷰를 작성하세요." maxlength="5000" id="ReviewContent" name="ReviewContent" data-name="ReviewContent" class="reviewtext w-input"></textarea>
+              <div class="reviewstars">
+                  <input type="radio" name="star" id="star5" data-name="star" class="w-form-formradioinput radio-button-6 w-radio-input" value="5">
+                  <label class="radio-button-field-6 w-radio star" for="star5">&#9733;</label>
+                  <input type="radio" name="star" id="star4" data-name="star" class="w-form-formradioinput radio-button-7 w-radio-input" value="4">
+                  <label class="radio-button-field-7 w-radio star" for="star4">&#9733;</label>
+                  <input type="radio" name="star" id="star3" data-name="star" class="w-form-formradioinput radio-button-8 w-radio-input" value="3">
+                  <label class="radio-button-field-8 w-radio star" for="star3">&#9733;</label>
+                  <input type="radio" name="star" id="star2" data-name="star" class="w-form-formradioinput radio-button-9 w-radio-input" value="2">
+                  <label class="radio-button-field-9 w-radio star" for="star2">&#9733;</label>
+                  <input type="radio" name="star" id="star1" data-name="star" class="w-form-formradioinput radio-button-10 w-radio-input" value="1">
+                  <label class="radio-button-field-10 w-radio star" for="star1">&#9733;</label></div>
+                <input type="submit" data-wait="Please wait..." class="reviewbtn w-button" value="등록">
+            </div>
+          </form>
+          <div class="w-form-done">
+            <div>Thank you! Your submission has been received!</div>
+          </div>
+          <div class="w-form-fail">
+            <div>Oops! Something went wrong while submitting the form.</div>
+          </div>
+        </div>
+      </div>
+      <div class="reviewboard">
+        {% for review in reviews %}
+        <ul role="list" class="review-list-body w-list-unstyled">
+            <li class="review-id">review id : 1</li>
+            <li class="review-author"><strong class="bold-text">홍길동</strong></li>
+            <li class="review-create-at">{{ review.created_at|date:"Y-m-d" }}</li>
+            <li id="w-node-_96b8e5c8-5a6e-ee6d-b92f-15209c036215-a46ec010" class="review-star stars">
+                {% for i in "12345" %}
+                    {% if review.rating >= i %}
+                        <span class="star filled">★</span>
+                {% elif review.rating > i|add:0.5 %}
+                    <span class="star half">★</span>
+                {% else %}
+                    <span class="star">★</span>
+                {% endif %}
+                {% endfor %}
+            </li>
+            <li id="w-node-_96b8e5c8-5a6e-ee6d-b92f-15209c036217-a46ec010" class="review-text">
+                <a href="index.html" class="link-2">{{ review.content }}</a>
+            </li>
+            <li id="w-node-_96b8e5c8-5a6e-ee6d-b92f-15209c03621a-a46ec010" class="review-image" style="background-image: url('{{ review.thumbnail.url }}')"></li>
+        </ul>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="review-nav w-nav">
+    <div class="container-4 w-container">
+      <nav role="navigation" class="nav-menu w-nav-menu">
+        <ul role="list" class="reviewpagination w-list-unstyled">
+          <li class="list-item-5">
+            <a href="#" class="leftbtn w-inline-block">
+              <div class="text-block-14">&lt;</div>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="link-block-12 w-inline-block">
+              <div class="text-block-14">1</div>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="link-block-12 w-inline-block">
+              <div class="text-block-14">2</div>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="link-block-13 w-inline-block">
+              <div class="text-block-14">3</div>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="link-block-14 w-inline-block">
+              <div class="text-block-14">&gt;</div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="w-nav-button">
+        <div class="w-icon-nav-menu"></div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

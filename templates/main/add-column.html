@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="section-add-column">
+    <div class="columnformdiv w-form">
+      <form id="wf-form-Column-form" name="wf-form-Column-form" data-name="Column form" method="get" class="columnform" data-wf-page-id="66c0b66346331fff4234bf45" data-wf-element-id="a1e1ffd5-77d7-caf4-787e-e08ec1384cea"><label for="ColumnTitle">ColumnTitle</label><input class="columntitle w-node-a1e1ffd5-77d7-caf4-787e-e08ec1384ced-4234bf45 w-input" autofocus="true" maxlength="256" name="ColumnTitle" data-name="ColumnTitle" placeholder="Create title section" type="text" id="ColumnTitle" required=""><label for="ColumnContents-3">ColumnContents</label><textarea required="" placeholder="Create Column contents section" maxlength="5000" id="ColumnContents-3" name="ColumnContents" data-name="ColumnContents" class="columntext w-node-_71067cfe-6bf2-df4f-8587-ece16bf5e0c4-4234bf45 w-input"></textarea><label for="ColumnThumbnail" class="field-label-8">ColumnThumbnail</label><input class="colunmthumbnail w-node-a1e1ffd5-77d7-caf4-787e-e08ec1384cf0-4234bf45 w-input" maxlength="256" name="ColumnThumbnail" data-name="ColumnThumbnail" placeholder="Drag the thumbnail image you want to add" type="text" id="ColumnThumbnail" required=""><input type="submit" data-wait="Please wait..." id="w-node-_154c6075-f703-67f7-687d-d39cc3d72d08-4234bf45" class="submit-button w-button" value="발행"></form>
+      <div class="w-form-done">
+        <div>Thank you! Your submission has been received!</div>
+      </div>
+      <div class="w-form-fail">
+        <div>Oops! Something went wrong while submitting the form.</div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

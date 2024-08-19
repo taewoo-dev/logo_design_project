@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+    <section class="loginsection">
+    <div class="loginformdiv w-form">
+      <form id="email-form" name="email-form" data-name="Email Form" method="post" class="loginform" data-wf-page-id="66c2096baa3f3ca7705ebba3" data-wf-element-id="d4037125-0254-34c0-09a3-dbb0c2300a09"><label for="name">Name</label><input class="loginname w-input" autofocus="true" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name" required=""><label for="email">Email Address</label><input class="loginemail w-input" maxlength="256" name="email" data-name="Email" placeholder="" type="email" id="email" required=""><label for="UserID">ID</label><input class="loginid w-input" maxlength="256" name="UserID" data-name="UserID" placeholder="" type="text" id="UserID" required=""><label for="Password">password</label><input class="loginpassword w-input" maxlength="256" name="Password" data-name="Password" placeholder="" type="password" id="Password" required=""><label for="PhoneNumber">phone Number</label><input class="loginphonenumber w-input" maxlength="256" name="PhoneNumber" data-name="PhoneNumber" placeholder="" type="tel" id="PhoneNumber"><input type="submit" data-wait="Please wait..." class="w-button" value="Submit"></form>
+      <div class="w-form-done">
+        <div>Thank you! Your submission has been received!</div>
+      </div>
+      <div class="w-form-fail">
+        <div>Oops! Something went wrong while submitting the form.</div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

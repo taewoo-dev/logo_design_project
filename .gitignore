@@ -260,7 +260,7 @@ poetry.toml
 # ruff
 .ruff_cache/
 
-# LSP config files
+# LSP logo_design_project files
 pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python,django
