@@ -10,7 +10,7 @@ def post_list(request):
     context = {
         "posts": posts,
     }
-    return render(request, "post_list.html", context)
+    return render(request, "sample/post_list.html", context)
 
 
 def post_detail(request, post_id):
@@ -24,7 +24,7 @@ def post_detail(request, post_id):
     context = {
         "post": post
     }
-    return render(request, "post_detail.html", context)
+    return render(request, "sample/post_detail.html", context)
 
 
 def post_add(request):
@@ -38,20 +38,37 @@ def post_add(request):
     else:
         print("method GET")
 
-    return render(request, "post_add.html")
+    return render(request, "sample/post_add.html")
 
 
 # 여기서 부터 main logo_design_view
 
-def main(requset):
-    return render(requset, "index2.html")
+def main(request):
+    return render(request, "main/index.html")
+
+
+def portfolio(request):
+    return render(request, "main/portfolio.html")
 
 
 def survey(request: object) -> object:
-    return render(request, "survey_form.html")
+    return render(request, "main/survey_form.html")
 
 
-def submit_form(request):
+def column(request):
+    return render(request, "main/column.html")
+
+
+def review(request):
+    return render(request, "main/review.html")
+
+
+def notice(request):
+    return render(request, "main/notice.html")
+
+
+def survey_form(request):
+    print(request.POST)
     username = request.POST["UserName"]
     phone_number = request.POST["Phone"]
     email = request.POST["Email"]
@@ -68,3 +85,8 @@ def submit_form(request):
     print("새로운 고객 추가")
     # 견적서를 파일로 변환하는 로직 이후에 추가
     return redirect("/main")
+
+
+def review_form(request):
+    print(request.POST)
+    pass

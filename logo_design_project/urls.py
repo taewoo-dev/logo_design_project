@@ -19,7 +19,8 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
-from logo_design_app.views import post_list, post_detail, post_add, main, submit_form, survey
+from logo_design_app.views import post_list, post_detail, post_add, main, survey, portfolio, column, \
+    review, notice, survey_form, review_form
 from logo_design_project.views import index
 
 urlpatterns = [
@@ -31,8 +32,13 @@ urlpatterns = [
 
     # 여기서 부터 main url
     path("main", main),
+    path("portfolio", portfolio),
     path('survey', survey),
-    path('submit-form/', submit_form, name='submit_form'),
+    path("column", column),
+    path("review", review),
+    path("notice", notice),
+    path('survey-form/', survey_form, name='survey_form'),
+    path('review-form/', review_form, name="review_form")
 ]
 
 urlpatterns += static(

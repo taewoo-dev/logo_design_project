@@ -2206,6 +2206,8 @@ figcaption {
   margin-left: 20px;
 }
 
+
+
 @media screen and (max-width: 991px) {
   .styleguide-block {
     text-align: center;
@@ -3545,5 +3547,4 @@ figcaption {
     grid-area: span 1 / span 3 / span 1 / span 3;
   }
 }
-
 

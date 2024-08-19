@@ -1,37 +1,39 @@
+{% load static %}
 <!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Sun Aug 18 2024 15:21:20 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="66bf0c5900d67ddb993134a9" data-wf-site="66bdeb6ab2539585c194b8ea">
 <head>
   <meta charset="utf-8">
-  <title>Untitled</title>
+  <title>Portfolio</title>
   <meta content="Untitled" property="og:title">
   <meta content="Untitled" property="twitter:title">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
-  <link href="css/normalize.css" rel="stylesheet" type="text/css">
-  <link href="css/webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/taeus-logo-design-template.webflow.css" rel="stylesheet" type="text/css">
+  <link href="{% static 'css/normalize.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'css/webflow.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'css/taeus-logo-design-template.webflow.css'%}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
   <script type="text/javascript">WebFont.load({  google: {    families: ["Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"]  }});</script>
   <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
-  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
-  <link href="images/webclip.png" rel="apple-touch-icon">
+  <link href="{% static 'images/favicon.ico'%}" rel="shortcut icon" type="image/x-icon">
+  <link href="{% static 'images/webclip.png'%}" rel="apple-touch-icon">
 </head>
 <body>
   <div data-collapse="medium" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navigation w-nav">
     <div class="navigation-items">
-      <a href="index.html" class="logo-link w-nav-brand"><img src="images/스크린샷-2024-08-15-오후-7.41.22.png" width="130" sizes="130px" srcset="images/스크린샷-2024-08-15-오후-7.41.22-p-500.png 500w, images/스크린샷-2024-08-15-오후-7.41.22.png 604w" alt="" class="logo-image"></a>
+      <a href="main" aria-current="page" class="logo-link w-nav-brand w--current"><img src="{% static 'images/스크린샷-2024-08-15-오후-7.41.22.png'%}" width="130" sizes="130px" srcset="{% static 'images/스크린샷-2024-08-15-오후-7.41.22-p-500.png' %} 500w,
+               {% static 'images/스크린샷-2024-08-15-오후-7.41.22.png' %} 604w" alt="" class="logo-image"></a>
       <div class="navigation-wrap">
         <nav role="navigation" class="navigation-items w-nav-menu">
-          <a href="index.html" class="navigation-item w-nav-link">Home</a>
-          <a href="untitled.html" aria-current="page" class="navigation-item w-nav-link w--current">portfolio</a>
-          <a href="styleguide.html" class="navigation-item w-nav-link">price</a>
-          <a href="column.html" class="navigation-item w-nav-link">column</a>
-          <a href="review.html" class="navigation-item w-nav-link">review</a>
-          <a href="notice.html" class="navigation-item w-nav-link">notice</a>
+          <a href="main" aria-current="page" class="navigation-item w-nav-link w--current">Home</a>
+          <a href="portfolio" class="navigation-item w-nav-link">portfolio</a>
+          <a href="survey" class="navigation-item w-nav-link">survey</a>
+          <a href="column" class="navigation-item w-nav-link">column</a>
+          <a href="review" class="navigation-item w-nav-link">review</a>
+          <a href="notice" class="navigation-item w-nav-link">notice</a>
         </nav>
-        <div class="menu-button w-nav-button"><img src="images/menu-icon_1menu-icon.png" width="22" alt="" class="menu-icon"></div>
+        <div class="menu-button w-nav-button"><img src="{% static 'images/menu-icon_1menu-icon.png'%}" width="22" alt="" class="menu-icon"></div>
       </div>
     </div>
   </div>
@@ -43,28 +45,28 @@
       <div id="w-node-_56897de8-3731-b5b4-d640-9755c99907c4-993134a9" class="div-block-4">
         <a href="#" class="link-block-1 w-inline-block"></a>
         <div class="work-description">
-          <a href="work/project-4.html" class="project-name-link">Logo1</a>
+          <a href="" class="project-name-link">Logo1</a>
           <div class="paragraph-light">Graphic Design</div>
         </div>
       </div>
       <div id="w-node-_3d42a26f-176d-64b2-8cd1-91379062023b-993134a9" class="div-block-5">
         <a href="#" class="link-block-2 w-inline-block"></a>
         <div class="work-description">
-          <a href="work/project-4.html" class="project-name-link">Logo2</a>
+          <a href="" class="project-name-link">Logo2</a>
           <div class="paragraph-light">Graphic Design</div>
         </div>
       </div>
       <div id="w-node-_94191ad1-d6e7-1b1e-f718-9dcc2ef97883-993134a9" class="div-block-6">
         <a href="#" class="link-block-3 w-inline-block"></a>
         <div class="work-description">
-          <a href="work/project-4.html" class="project-name-link">Logo3</a>
+          <a href="" class="project-name-link">Logo3</a>
           <div class="paragraph-light">Graphic Design</div>
         </div>
       </div>
       <div id="w-node-c56f1d23-26dd-bbd4-08d4-c35fa27d1edd-993134a9" class="div-block-7">
         <a href="#" class="link-block-4 w-inline-block"></a>
         <div class="work-description">
-          <a href="work/project-4.html" class="project-name-link">Logo4</a>
+          <a href="" class="project-name-link">Logo4</a>
           <div class="paragraph-light">Graphic Design</div>
         </div>
       </div>
@@ -72,34 +74,34 @@
         <a href="#" class="link-block-5 w-inline-block"></a>
         <div class="work-description">
           <div class="paragraph-light">Graphic Design</div>
-          <a href="work/project-4.html" class="project-name-link">Logo5</a>
+          <a href="" class="project-name-link">Logo5</a>
         </div>
       </div>
       <div id="w-node-bd9fa1d5-74a5-cf2c-0da3-aa4711ca7898-993134a9" class="div-block-9">
         <a href="#" class="link-block-6 w-inline-block"></a>
         <div class="work-description">
-          <a href="work/project-4.html" class="project-name-link">Logo6</a>
+          <a href="" class="project-name-link">Logo6</a>
           <div class="paragraph-light">Graphic Design</div>
         </div>
       </div>
       <div id="w-node-_6a49d622-7ac3-9056-1e4d-1da659468049-993134a9" class="div-block-10">
         <a href="#" class="link-block-7 w-inline-block"></a>
         <div class="work-description">
-          <a href="work/project-4.html" class="project-name-link">Logo7</a>
+          <a href="" class="project-name-link">Logo7</a>
           <div class="paragraph-light">Graphic Design</div>
         </div>
       </div>
       <div id="w-node-_005c12ea-96ea-33bb-49cd-91bcbeeabb98-993134a9" class="div-block-11">
         <a href="#" class="link-block-8 w-inline-block"></a>
         <div class="work-description">
-          <a href="work/project-4.html" class="project-name-link">Logo8</a>
+          <a href="" class="project-name-link">Logo8</a>
           <div class="paragraph-light">Graphic Design</div>
         </div>
       </div>
       <div id="w-node-ffe44f13-6df1-219d-2801-9fd567f94593-993134a9" class="div-block-12">
         <a href="#" class="link-block-9 w-inline-block"></a>
         <div class="work-description">
-          <a href="work/project-4.html" class="project-name-link">Logo9</a>
+          <a href="" class="project-name-link">Logo9</a>
           <div class="paragraph-light">Graphic Design</div>
         </div>
       </div>
@@ -118,6 +120,6 @@
     </div>
   </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66bdeb6ab2539585c194b8ea" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-  <script src="js/webflow.js" type="text/javascript"></script>
+  <script src="{% static 'js/webflow.js' %}" type="text/javascript"></script>
 </body>
 </html>
