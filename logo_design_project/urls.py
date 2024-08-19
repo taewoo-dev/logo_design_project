@@ -28,6 +28,8 @@ urlpatterns = [
     path('posts/', post_list),
     path('posts/<int:post_id>/', post_detail),
     path('posts/add/', post_add),
+
+    # 여기서 부터 main url
     path("main", main),
     path('survey', survey),
     path('submit-form/', submit_form, name='submit_form'),
