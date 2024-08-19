@@ -49,7 +49,11 @@ def main(request):
 
 
 def portfolio(request):
-    return render(request, "main/portfolio.html")
+    portfolios = Portfolio.objects.all()
+    contents = {
+        "portfolios": portfolios
+    }
+    return render(request, "main/portfolio.html", contents)
 
 
 def survey(request: object) -> object:

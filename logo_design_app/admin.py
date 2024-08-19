@@ -28,5 +28,5 @@ class Admin(admin.ModelAdmin):
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ["id", "thumbnail"]
+    list_display = ["id", "thumbnail", "created_at"]
     pass

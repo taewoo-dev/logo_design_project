@@ -61,7 +61,7 @@
         <ul role="list" class="review-list-body w-list-unstyled">
             <li class="review-id">review id : 1</li>
             <li class="review-author"><strong class="bold-text">홍길동</strong></li>
-            <li class="review-create-at">{{ review.created_at }}</li>
+            <li class="review-create-at">{{ review.created_at|date:"Y-m-d" }}</li>
             <li id="w-node-_96b8e5c8-5a6e-ee6d-b92f-15209c036215-a46ec010" class="review-star stars">
                 {% for i in "12345" %}
                     {% if review.rating >= i %}

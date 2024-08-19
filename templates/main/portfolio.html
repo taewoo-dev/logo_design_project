@@ -6,69 +6,16 @@
       <h1>PORTFOLIO</h1>
     </div>
     <div class="w-layout-grid grid-2">
-      <div id="w-node-_56897de8-3731-b5b4-d640-9755c99907c4-993134a9" class="div-block-4">
-        <a href="#" class="link-block-1 w-inline-block"></a>
-        <div class="work-description">
-          <a href="" class="project-name-link">Logo1</a>
-          <div class="paragraph-light">Graphic Design</div>
-        </div>
-      </div>
-      <div id="w-node-_3d42a26f-176d-64b2-8cd1-91379062023b-993134a9" class="div-block-5">
-        <a href="#" class="link-block-2 w-inline-block"></a>
-        <div class="work-description">
-          <a href="" class="project-name-link">Logo2</a>
-          <div class="paragraph-light">Graphic Design</div>
-        </div>
-      </div>
-      <div id="w-node-_94191ad1-d6e7-1b1e-f718-9dcc2ef97883-993134a9" class="div-block-6">
-        <a href="#" class="link-block-3 w-inline-block"></a>
-        <div class="work-description">
-          <a href="" class="project-name-link">Logo3</a>
-          <div class="paragraph-light">Graphic Design</div>
-        </div>
-      </div>
-      <div id="w-node-c56f1d23-26dd-bbd4-08d4-c35fa27d1edd-993134a9" class="div-block-7">
-        <a href="#" class="link-block-4 w-inline-block"></a>
-        <div class="work-description">
-          <a href="" class="project-name-link">Logo4</a>
-          <div class="paragraph-light">Graphic Design</div>
-        </div>
-      </div>
-      <div id="w-node-_251a94ff-7f6b-8864-4ed8-42f3de71bb27-993134a9" class="div-block-8">
-        <a href="#" class="link-block-5 w-inline-block"></a>
-        <div class="work-description">
-          <div class="paragraph-light">Graphic Design</div>
-          <a href="" class="project-name-link">Logo5</a>
-        </div>
-      </div>
-      <div id="w-node-bd9fa1d5-74a5-cf2c-0da3-aa4711ca7898-993134a9" class="div-block-9">
-        <a href="#" class="link-block-6 w-inline-block"></a>
-        <div class="work-description">
-          <a href="" class="project-name-link">Logo6</a>
-          <div class="paragraph-light">Graphic Design</div>
-        </div>
-      </div>
-      <div id="w-node-_6a49d622-7ac3-9056-1e4d-1da659468049-993134a9" class="div-block-10">
-        <a href="#" class="link-block-7 w-inline-block"></a>
-        <div class="work-description">
-          <a href="" class="project-name-link">Logo7</a>
-          <div class="paragraph-light">Graphic Design</div>
-        </div>
-      </div>
-      <div id="w-node-_005c12ea-96ea-33bb-49cd-91bcbeeabb98-993134a9" class="div-block-11">
-        <a href="#" class="link-block-8 w-inline-block"></a>
-        <div class="work-description">
-          <a href="" class="project-name-link">Logo8</a>
-          <div class="paragraph-light">Graphic Design</div>
-        </div>
-      </div>
-      <div id="w-node-ffe44f13-6df1-219d-2801-9fd567f94593-993134a9" class="div-block-12">
-        <a href="#" class="link-block-9 w-inline-block"></a>
-        <div class="work-description">
-          <a href="" class="project-name-link">Logo9</a>
-          <div class="paragraph-light">Graphic Design</div>
-        </div>
-      </div>
+      {% for portfolio in portfolios %}
+          <div id="w-node-_56897de8-3731-b5b4-d640-9755c99907c4-993134a9" class="div-block-4">
+{#            <a href="" class="link-block-1 w-inline-block" style="background-image: url('{{ portfolio.thumbnail.url }}')"></a>#}
+            <div class="link-block-1 w-inline-block" style="background-image: url('{{ portfolio.thumbnail.url }}')"></div>
+            <div class="work-description">
+                <a href="" class="project-name-link">{{ portfolio.title }}</a>
+                <div class="paragraph-light">{{ portfolio.logotype }}</div>
+            </div>
+          </div>
+      {% endfor %}
     </div>
   </section>
 {% endblock %}
