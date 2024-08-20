@@ -4,30 +4,17 @@
     <section class="column_list">
     <h1><strong>전문칼럼</strong></h1>
     <div class="w-layout-grid grid-3">
-      <div id="w-node-_7debd796-499e-7718-e8b0-e7c268c5b1fc-cea8722e" class="column">
-        <a href="" class="columnimagelink w-inline-block"></a>
-        <div class="colunmtitlediv">
-          <a href="#" class="columndetaillink w-inline-block"><img src="{% static 'images/스크린샷-2024-08-15-오후-7.41.22.png' %}" loading="lazy" width="60" height="Auto" alt="" srcset="{% static 'images/스크린샷-2024-08-15-오후-7.41.22-p-500.png' %} 500w, {% static 'images/스크린샷-2024-08-15-오후-7.41.22.png' %} 604w" sizes="60px" class="columntitleimage">
-            <div class="columntitletext"><strong>simple is best</strong></div>
-          </a>
+        {% for column in columns %}
+        <div class="column">
+            <a href="/column/{{ column.id }}" class="columnimagelink w-inline-block" style="background-image: url({{ column.thumbnail.url }})"></a>
+            <div class="colunmtitlediv">
+              <a href="/column/{{ column.id }}" class="columndetaillink w-inline-block">
+                  <img src="{% static 'images/스크린샷-2024-08-15-오후-7.41.22.png' %}" loading="lazy" width="60" height="Auto" alt="" srcset="{% static 'images/스크린샷-2024-08-15-오후-7.41.22-p-500.png' %} 500w, {% static 'images/스크린샷-2024-08-15-오후-7.41.22.png' %} 604w" sizes="60px" class="columntitleimage">
+                <div class="columntitletext"><strong>{{ column.title }}</strong></div>
+              </a>
+            </div>
         </div>
-      </div>
-      <div id="w-node-_92b29f34-9828-8454-4627-578a1391f943-cea8722e" class="column">
-        <a href="" class="link-block-10 w-inline-block"></a>
-        <div class="div-block-14">
-          <a href="#" class="columndetaillink w-inline-block"><img src="{% static 'images/스크린샷-2024-08-15-오후-7.41.22.png' %}" loading="lazy" width="60" height="Auto" alt="" srcset="{% static 'images/스크린샷-2024-08-15-오후-7.41.22-p-500.png' %} 500w, {% static 'images/스크린샷-2024-08-15-오후-7.41.22.png' %} 604w" sizes="60px" class="columntitleimage">
-            <div class="text-block-10"><strong>simple is best</strong></div>
-          </a>
-        </div>
-      </div>
-      <div class="column">
-        <a href="" class="columnimagelink w-inline-block" style="background-image: url({% static 'images/favicon.ico'%})"></a>
-        <div class="colunmtitlediv">
-          <a href="#" class="columndetaillink w-inline-block"><img src="{% static 'images/스크린샷-2024-08-15-오후-7.41.22.png' %}" loading="lazy" width="60" height="Auto" alt="" srcset="{% static 'images/스크린샷-2024-08-15-오후-7.41.22-p-500.png' %} 500w, {% static 'images/스크린샷-2024-08-15-오후-7.41.22.png' %} 604w" sizes="60px" class="columntitleimage">
-            <div class="columntitletext"><strong>simple is best</strong></div>
-          </a>
-        </div>
-      </div>
+        {% endfor %}
     </div>
   </section>
 {% endblock %}

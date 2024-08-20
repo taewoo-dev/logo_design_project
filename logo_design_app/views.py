@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from logo_design_app.models import Post, Comment, Survey, Review, Portfolio
+from logo_design_app.models import Post, Comment, Survey, Review, Portfolio, Column
 
 
 # 연습용 sample 모델
@@ -61,12 +61,15 @@ def survey(request):
 
 
 def column(request):
-    return render(request, "main/column.html")
+    columns = Column.objects.all()
+    contents = {
+        "columns": columns
+    }
+    return render(request, "main/column.html", contents)
 
 
 def review(request):
     reviews = Review.objects.all()
-    print(reviews)
     contents = {
         "reviews": reviews
     }
@@ -77,8 +80,20 @@ def notice(request):
     return render(request, "main/notice.html")
 
 
+def column_detail(request, column_id):
+    column = Column.objects.get(id=column_id)
+    contents = {
+        "column": column
+    }
+    return render(request, "main/column_detail.html", contents)
+
+
 def add_portfolio(request):
     return render(request, "main/add-portfolio.html")
+
+
+def add_column(request):
+    return render(request, "main/add-column.html")
 
 
 def portfolio_form(request):
@@ -112,6 +127,17 @@ def survey_form(request):
         print("새로운 고객 추가")
     # 견적서를 파일로 변환하는 로직 이후에 추가
     return redirect("main")
+
+
+def column_form(request):
+    if request.method == "POST":
+        print(request.POST)
+        title = request.POST["ColumnTitle"]
+        content = request.POST["ColumnContents"]
+        thumbnail = request.FILES["ColumnThumbnail"]
+        Column.objects.create(title=title, content=content, thumbnail=thumbnail)
+        print("새로운 칼럼 추가")
+    return redirect("column")
 
 
 def review_form(request):

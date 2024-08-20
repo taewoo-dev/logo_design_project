@@ -1,5 +1,5 @@
 from django.contrib import admin
-from logo_design_app.models import Post, Comment, Survey, Review, Portfolio
+from logo_design_app.models import Post, Comment, Survey, Review, Portfolio, Column
 
 
 # Register your models here.
@@ -28,5 +28,11 @@ class Admin(admin.ModelAdmin):
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
+    list_display = ["id", "thumbnail", "created_at"]
+    pass
+
+
+@admin.register(Column)
+class ModelNameAdmin(admin.ModelAdmin):
     list_display = ["id", "thumbnail", "created_at"]
     pass

@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+      <div class="columndetailsection">
+    <div class="container">
+      <div class="w-layout-grid project-overview-grid">
+        <div id="w-node-_0befc76b-828c-2822-f9fa-f2c6de040bbf-c194b92c" class="columndetailtitle">
+          <div class="paragraph-title">전문가 칼럼</div>
+          <div class="title_horizen"></div>
+        </div>
+        <div id="w-node-_0befc76b-828c-2822-f9fa-f2c6de040bc4-c194b92c" class="columndetailcontents">
+          <h1 class="heading-3"><strong>{{ column.title }}</strong></h1>
+          <div class="paragraph-light cc-position-name">{{ column.content }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="column-nav">
+    <div class="w-layout-blockcontainer container-2 w-container">
+      <a href="#" class="up-post w-inline-block">
+        <div class="text-block-11">⬆ next blog post link</div>
+      </a>
+      <a href="#" class="down-post w-inline-block">
+        <div class="text-block-11">⬇️ next blog post link</div>
+      </a>
+      <a href="column.html" class="column-main-btn w-button">목록</a>
+    </div>
+  </section>
+{% endblock %}
