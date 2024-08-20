@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from logo_design_app.models import Post, Comment, Survey, Review, Portfolio
 
 
-# Create your views here.
+# 연습용 sample 모델
 
 def post_list(request):
     posts = Post.objects.all()
@@ -56,7 +56,7 @@ def portfolio(request):
     return render(request, "main/portfolio.html", contents)
 
 
-def survey(request: object) -> object:
+def survey(request):
     return render(request, "main/survey_form.html")
 
 
