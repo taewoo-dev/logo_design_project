@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 
-from logo_design_app.models import Post, Comment, Survey, Review, Portfolio, Column
+from logo_design_app.models import Post, Comment, Survey, Review, Column
 
 
 # 연습용 sample 모델
+
 
 def post_list(request):
     posts = Post.objects.all()
@@ -21,9 +22,7 @@ def post_detail(request, post_id):
             post=post,
             content=comment_content,
         )
-    context = {
-        "post": post
-    }
+    context = {"post": post}
     return render(request, "sample/post_detail.html", context)
 
 
@@ -44,16 +43,17 @@ def post_add(request):
 
 # 여기서 부터 main logo_design_view
 
+
 def main(request):
     return render(request, "main/index.html")
 
 
-def portfolio(request):
-    portfolios = Portfolio.objects.all()
-    contents = {
-        "portfolios": portfolios
-    }
-    return render(request, "main/portfolio.html", contents)
+# def portfolio(request):
+#     portfolios = Portfolio.objects.all()
+#     contents = {
+#         "portfolios": portfolios
+#     }
+#     return render(request, "main/portfolio.html", contents)
 
 
 def survey(request):
@@ -62,17 +62,13 @@ def survey(request):
 
 def column(request):
     columns = Column.objects.all()
-    contents = {
-        "columns": columns
-    }
+    contents = {"columns": columns}
     return render(request, "main/column.html", contents)
 
 
 def review(request):
     reviews = Review.objects.all()
-    contents = {
-        "reviews": reviews
-    }
+    contents = {"reviews": reviews}
     return render(request, "main/review.html", contents)
 
 
@@ -82,34 +78,35 @@ def notice(request):
 
 def column_detail(request, column_id):
     column = Column.objects.get(id=column_id)
-    contents = {
-        "column": column
-    }
+    contents = {"column": column}
     return render(request, "main/column_detail.html", contents)
 
 
-def add_portfolio(request):
-    return render(request, "main/add-portfolio.html")
+# def add_portfolio(request):
+#     return render(request, "main/add-portfolio.html")
 
 
 def add_column(request):
     return render(request, "main/add-column.html")
 
 
-def portfolio_form(request):
-    if request.method == "POST":
-        print(request.POST)
-        title = request.POST['PortfolioTitle']
-        logotype = request.POST['PortfolioLogoType']
-        thumbnail = request.FILES['PortfolioThumbnail']
-        Portfolio.objects.create(title=title, logotype=logotype, thumbnail=thumbnail)
-        print("새로운 포트폴리오 추가!")
-    return redirect("portfolio")
+def add_notice(request):
+    return render(request, "main/add-notice.html")
+
+
+# def portfolio_form(request):
+#     if request.method == "POST":
+#         print(request.POST)
+#         title = request.POST['PortfolioTitle']
+#         logotype = request.POST['PortfolioLogoType']
+#         thumbnail = request.FILES['PortfolioThumbnail']
+#         Portfolio.objects.create(title=title, logotype=logotype, thumbnail=thumbnail)
+#         print("새로운 포트폴리오 추가!")
+#     return redirect("portfolio")
 
 
 def survey_form(request):
     if request.method == "POST":
-        print(request.POST)
         username = request.POST["UserName"]
         phone_number = request.POST["Phone"]
         email = request.POST["Email"]
@@ -120,10 +117,18 @@ def survey_form(request):
         logo_type = request.POST["radio"]
         brand_image = request.POST["BrandPlusImage"]
         brand_color = request.POST["BrandColor"]
-        Survey.objects.create(username=username, phone=phone_number, email=email, brand_name=brand_name,
-                              brand_mean=brand_mean, brand_desc=brand_desc, brand_target=brand_target,
-                              logo_type=logo_type,
-                              brand_image=brand_image, brand_color=brand_color)
+        Survey.objects.create(
+            username=username,
+            phone=phone_number,
+            email=email,
+            brand_name=brand_name,
+            brand_mean=brand_mean,
+            brand_desc=brand_desc,
+            brand_target=brand_target,
+            logo_type=logo_type,
+            brand_image=brand_image,
+            brand_color=brand_color,
+        )
         print("새로운 고객 추가")
     # 견적서를 파일로 변환하는 로직 이후에 추가
     return redirect("main")
@@ -146,7 +151,11 @@ def review_form(request):
         content = request.POST["ReviewContent"]
         rating = request.POST["star"][0]
         print(request.FILES)
-        image = request.FILES['ReviewThumbnail']
+        image = request.FILES["ReviewThumbnail"]
         Review.objects.create(content=content, rating=rating, thumbnail=image)
         print("새로운 리뷰 추가")
     return redirect("review")
+
+
+def notice_form(request):
+    return redirect("notice")

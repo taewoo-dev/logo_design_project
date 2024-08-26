@@ -296,9 +296,7 @@ figcaption {
   min-height: 600px;
   margin-top: 20px;
   margin-bottom: 10px;
-  padding-top: 30px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 30px 30px;
 }
 
 .paragraph-light.noticedetailtext {
@@ -873,7 +871,7 @@ figcaption {
 .project-overview-grid {
   grid-column-gap: 50px;
   grid-row-gap: 50px;
-  text-align: center;
+  /*text-align: center;*/
   grid-template: ". . . ."
                  ". . . ."
                  / 1fr 1fr 1fr 1fr;
@@ -1357,6 +1355,7 @@ figcaption {
   border-radius: 10px;
   margin-bottom: 50px;
   font-size: 30px;
+  text-align: center;
 }
 
 .paragraph-title {
