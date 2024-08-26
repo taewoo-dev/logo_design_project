@@ -3,7 +3,7 @@
 {% block content %}
 	<div class="section-add-portfoilo">
     <div class="portfolioformdiv w-form">
-      <form id="wf-form-Column-form" name="PortfolioForm" action="/portfolio-form/" enctype="multipart/form-data" data-name="Column form" method="post" class="portfoiloform" data-wf-page-id="66c1f36002f84885c8d2f084" data-wf-element-id="a1e1ffd5-77d7-caf4-787e-e08ec1384cea">
+      <form id="wf-form-Column-form" name="PortfolioForm" action="{% url 'portfolio_form' %}" enctype="multipart/form-data" data-name="Column form" method="post" class="portfoiloform" data-wf-page-id="66c1f36002f84885c8d2f084" data-wf-element-id="a1e1ffd5-77d7-caf4-787e-e08ec1384cea">
           {% csrf_token %}
           <input class="portfoliotitle w-node-a1e1ffd5-77d7-caf4-787e-e08ec1384ced-c8d2f084 w-input" autofocus="true" maxlength="256" name="PortfolioTitle" data-name="PortfolioTitle" placeholder="Create title section" type="text" id="PortfolioTitle" required="">
           <input class="portfoliotype w-node-_1b6556d8-5404-1c5b-bdeb-e070676c79f7-c8d2f084 w-input" maxlength="256" name="PortfolioLogoType" data-name="logoType" placeholder="로고의 종류를 입력하세요." type="text" id="logoType" required="">

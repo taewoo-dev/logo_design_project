@@ -3,7 +3,7 @@
 {% block content %}
     <div class="section-add-column">
     <div class="columnformdiv w-form">
-      <form id="wf-form-Column-form" name="wf-form-Column-form" data-name="Column form" method="post" action="/column-form/" enctype="multipart/form-data" class="columnform" data-wf-page-id="66c0b66346331fff4234bf45" data-wf-element-id="a1e1ffd5-77d7-caf4-787e-e08ec1384cea">
+      <form id="wf-form-Column-form" name="wf-form-Column-form" data-name="Column form" method="post" action="{% url 'column_form' %}" enctype="multipart/form-data" class="columnform" data-wf-page-id="66c0b66346331fff4234bf45" data-wf-element-id="a1e1ffd5-77d7-caf4-787e-e08ec1384cea">
           {% csrf_token %}
           <label for="ColumnTitle">ColumnTitle</label>
             <input class="columntitle w-node-a1e1ffd5-77d7-caf4-787e-e08ec1384ced-4234bf45 w-input" autofocus="true" maxlength="256" name="ColumnTitle" data-name="ColumnTitle" placeholder="Create title section" type="text" id="ColumnTitle" required="">

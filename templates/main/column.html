@@ -5,15 +5,17 @@
     <h1><strong>전문칼럼</strong></h1>
     <div class="w-layout-grid grid-3">
         {% for column in columns %}
-        <div class="column">
-            <a href="/column/{{ column.id }}" class="columnimagelink w-inline-block" style="background-image: url({{ column.thumbnail.url }})"></a>
-            <div class="colunmtitlediv">
-              <a href="/column/{{ column.id }}" class="columndetaillink w-inline-block">
-                  <img src="{% static 'images/스크린샷-2024-08-15-오후-7.41.22.png' %}" loading="lazy" width="60" height="Auto" alt="" srcset="{% static 'images/스크린샷-2024-08-15-오후-7.41.22-p-500.png' %} 500w, {% static 'images/스크린샷-2024-08-15-오후-7.41.22.png' %} 604w" sizes="60px" class="columntitleimage">
-                <div class="columntitletext"><strong>{{ column.title }}</strong></div>
-              </a>
+{#            {% if column_id %}#}
+            <div class="column">
+                <a href="{% url 'column_detail' column.id %}" class="columnimagelink w-inline-block" style="background-image: url({{ column.thumbnail.url }})"></a>
+                <div class="colunmtitlediv">
+                  <a href="{% url 'column_detail' column.id %}" class="columndetaillink w-inline-block">
+                      <img src="{% static 'images/스크린샷-2024-08-15-오후-7.41.22.png' %}" loading="lazy" width="60" height="Auto" alt="" srcset="{% static 'images/스크린샷-2024-08-15-오후-7.41.22-p-500.png' %} 500w, {% static 'images/스크린샷-2024-08-15-오후-7.41.22.png' %} 604w" sizes="60px" class="columntitleimage">
+                    <div class="columntitletext"><strong>{{ column.title }}</strong></div>
+                  </a>
+                </div>
             </div>
-        </div>
+{#            {% endif %}#}
         {% endfor %}
     </div>
   </section>

@@ -3305,7 +3305,7 @@
   var formData = new URLSearchParams();
   form1Data.forEach((value, key) => formData.append(key, value));
   form2Data.forEach((value, key) => formData.append(key, value));
-  fetch('/survey-form/', {  // 서버 엔드포인트 URL로 교체
+  fetch('/survey/form/', {  // 서버 엔드포인트 URL로 교체
   method: 'POST',
   body: formData,
   redirect: 'follow'
